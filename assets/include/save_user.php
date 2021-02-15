@@ -4,5 +4,11 @@
     $uname = $_POST['uname'];
     $pass = $_POST['pass'];
     $sql = "INSERT INTO users(`full_name`,`user_name`,`password`) VALUES ('$fname','$uname','$pass')";
-    mysqli_query($conn, $sql);
+    if(mysqli_query($conn, $sql)) {
+        $response=1;
+    }
+    else {
+        $response=0;
+    }
+    echo json_encode($response);
 ?>
