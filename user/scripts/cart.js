@@ -3,12 +3,10 @@ function cartItem() {
     $('.cart-item-quan').each(function() {
         quantity += parseInt($("#cart-item-quantity-"+$(this).data("id")).val());
     });
-    // sessionStorage.setItem("cart-items", quantity);
     $(".cart-items").text(quantity);
 }
 function cartPrice() {
     var price = 0;
-
     $(".item-price").each(function () {
         var item_price = parseInt($(this).text());
         var input_id = parseInt($(this).data("id"));
@@ -36,15 +34,10 @@ $(document).on("click", ".delete-item", function () {
     }).then((willDelete) => {
         if (willDelete) {
             $.ajax({
-                url: "../../assets/include/delete_cart_item.php",
+                url: "../include/delete_cart_item.php",
                 type: "POST",
                 data: { cid: id },
             });
-            var items = parseInt($(".cart-items").text());
-            $(".cart-items").text(items - 1);
-            $("#cart-item-" + id).remove();
-            var current = parseInt($(".cart-items").text());
-            // sessionStorage.setItem("cart-items", current);
             cartPrice();
             cartItem();
             swal("Cart has been updated!", {
@@ -60,7 +53,7 @@ $(document).ready(function () {
         cartPrice();
         cartItem();
         $.ajax({
-            url: "../../assets/include/update_cart_item.php",
+            url: "../include/update_cart_item.php",
             type: "POST",
             data: { cid: id, quan: quantity }
         });
@@ -71,7 +64,7 @@ $(document).on("click", ".checkout", function() {
         var id = $(this).data("id");
         var quantity = $("#cart-item-quantity-"+id).val();
         $.ajax({
-            url: "../../assets/include/checkout.php",
+            url: "../assets/include/checkout.php",
             type: "POST",
             data: { cid: id, quan: quantity }
         })
