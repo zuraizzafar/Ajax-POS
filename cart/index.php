@@ -130,6 +130,7 @@ include '../assets/include/conn.php';
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 </body>
 

@@ -82,7 +82,7 @@ if (!isset($_SESSION['username'])) {
                                 <div class="card-text"><strong>Category: </strong><?php echo $row['category']; ?></div>
                                 <small class="text-muted"><strong>Subcategory: </strong><?php echo $row['subcat']; ?></small> <br>
                                 <div class="text-center">
-                                    <button class="btn btn-success mt-2 pl-5 pr-5 rounded-pill add-to-cart" data-id="<?php echo $row['pid']; ?>"><i class="fas fa-cart-plus"></i></button>
+                                    <button class="btn btn-success mt-2 pl-5 pr-5 rounded-pill add-to-cart" data-id="<?php echo $row['pid'];?>"><i class="fas fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>
