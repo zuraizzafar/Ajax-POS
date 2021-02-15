@@ -43,7 +43,7 @@ if (!isset($_SESSION['username'])) {
                 <span class="navbar-text">
                     <div class="btn-group">
                         <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['username']; ?>
+                            <i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['full_name']; ?>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                             <a class="dropdown-item" href="#">Manage profile</a>
