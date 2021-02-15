@@ -16,8 +16,8 @@ include "../../assets/include/conn.php";
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="../styles/login.css">
     <link rel="shortcut icon" href="../../assets/images/icons8-truck-100.png" type="image/x-icon">
-    <script src="../scripts/login.js"></script>
     <link rel="stylesheet" href="../../assets/styles/all.css">
+    <script src="../scripts/login.js"></script>
 </head>
 
 <body class=" bg-dark">

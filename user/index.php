@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../assets/styles/all.css">
     <link rel="shortcut icon" href="../assets/images/icons8-truck-100.png" type="image/x-icon">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="scripts/home.js"></script>
 </head>
 <body>
     
