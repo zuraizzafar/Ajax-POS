@@ -34,7 +34,7 @@ $(document).on("click", ".delete-item", function () {
     }).then((willDelete) => {
         if (willDelete) {
             $.ajax({
-                url: "../include/delete_cart_item.php",
+                url: "../includes/delete_cart_item.php",
                 type: "POST",
                 data: { cid: id },
             });
@@ -54,7 +54,7 @@ $(document).ready(function () {
         cartPrice();
         cartItem();
         $.ajax({
-            url: "../include/update_cart_item.php",
+            url: "../includes/update_cart_item.php",
             type: "POST",
             data: { cid: id, quan: quantity }
         });
@@ -65,7 +65,7 @@ $(document).on("click", ".checkout", function() {
         var id = $(this).data("id");
         var quantity = $("#cart-item-quantity-"+id).val();
         $.ajax({
-            url: "../assets/include/checkout.php",
+            url: "../includes/checkout.php",
             type: "POST",
             data: { cid: id, quan: quantity }
         })
