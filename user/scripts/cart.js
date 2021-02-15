@@ -38,6 +38,7 @@ $(document).on("click", ".delete-item", function () {
                 type: "POST",
                 data: { cid: id },
             });
+            $("#cart-item-"+id).remove();
             cartPrice();
             cartItem();
             swal("Cart has been updated!", {
