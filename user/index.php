@@ -1,11 +1,12 @@
 <?php
-    session_start();
-    if(!isset($_SESSION['username'])) {
-        header("location: login/");
-    }
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("location: login/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +21,35 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="scripts/home.js"></script>
 </head>
+
 <body>
-    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../user/">
+            <img src="../assets/images/icons8-truck-100.png" alt="icon" width="40px">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Manage Profile</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['username']; ?>
+            </span>
+        </div>
+    </nav>
+    <div class="container">
+        
+    </div>
 </body>
+
 </html>
