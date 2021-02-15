@@ -24,7 +24,7 @@ if (!isset($_SESSION['username'])) {
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <a class="navbar-brand" href="../user/">
                 <img src="../assets/images/icons8-truck-100.png" alt="icon" width="40px">
             </a>
@@ -39,6 +39,9 @@ if (!isset($_SESSION['username'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="cart/"><i class="fas fa-shopping-cart mr-1"></i>Cart</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="transactions/"><i class="fas fa-history mr-1"></i>Transactions</a>
+                    </li>
                 </ul>
                 <span class="navbar-text">
                     <div class="btn-group">
@@ -46,7 +49,7 @@ if (!isset($_SESSION['username'])) {
                             <i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['full_name']; ?>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-                            <a class="dropdown-item" href="#">Manage profile</a>
+                            <a class="dropdown-item" href="profile/">Manage profile</a>
                             <a class="dropdown-item" href="../assets/include/logout.php"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
                         </div>
                     </div>
@@ -54,8 +57,8 @@ if (!isset($_SESSION['username'])) {
             </div>
         </nav>
     </header>
-    <section class="site-content pt-5">
-        <div class="container">
+    <section class="site-content pt-5 mt-5">
+        <div class="container mt-3">
             <div class="row">
                 <?php
                 $sql = "SELECT  products.name 'product', products.quantity 'quant',
