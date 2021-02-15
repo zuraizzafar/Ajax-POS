@@ -67,7 +67,7 @@ if (!isset($_SESSION['username'])) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             $prod_id = $row['product_id'];
                         ?>
-                            <div class="col-md-12" class="cart-card" data-id="<?php echo $prod_id; ?>" id="cart-item-<?php echo $prod_id; ?>">
+                            <div class="col-md-12 cart-card" data-id="<?php echo $prod_id; ?>" id="cart-item-<?php echo $prod_id; ?>">
                                 <div class="card mb-4">
                                     <div class="row">
                                         <img class="col-4" src="../../assets/images/cardboard-box-mock-up.jfif" alt="Prodcut" draggable="false">
