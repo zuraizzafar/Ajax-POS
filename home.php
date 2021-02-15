@@ -91,6 +91,7 @@
                 </div>
                 <?php }   ?>
             </div>
+        </div>
     </section>
 </body>
 
