@@ -1,0 +1,85 @@
+nav {
+    width: 5%;
+    position: fixed;
+    height: 100%;
+    text-align: center;
+    background-color: mediumslateblue;
+    z-index: 1;
+}
+.btn {
+    outline: none;
+    padding: 10px;
+}
+nav ul {
+    padding: 50px 0px;
+    list-style: none;
+    padding-left: 0;
+}
+nav ul li {
+    text-align: center;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 0px;
+}
+.active-nav {
+    background-color: rgb(90, 75, 177);
+}
+nav .btn:hover {
+    background-color: rgb(100, 83, 196);
+}
+nav a:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(100, 83, 196);
+}
+.main {
+    float: right;
+    width: 95%;
+}
+.modal button {
+    outline: none;
+}
+#bs-alert {
+    display: none;
+}
+.card img {
+    user-select: none;
+}
+.credit-cards {
+    user-select: none;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 20pt;
+        padding: 10px !important;
+    }
+    nav {
+        width: 15%;
+    }
+    .main {
+        width: 85%;
+    }
+}

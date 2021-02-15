@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+.login-banner {
+    user-select: none;
+}
+.signup-switch, .signin-switch {
+    cursor: pointer;
+}
+.signup-switch:hover, .signin-switch:hover {
+    color: darkcyan;
+}
+
+@media screen and (max-width: 1024px) {
+    h2 {
+        font-size: 18pt;
+    }
+}
