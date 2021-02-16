@@ -59,7 +59,7 @@ include "../../assets/include/conn.php";
                                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                                         </div>
                                         <button type="submit" class="btn btn-primary login-btn">Login</button>
-                                        <span class="p-3 signup-switch">Dont have an accuount? Signup Now!</span>
+                                        <span class="p-3 signup-switch">Dont have an account? Signup Now!</span>
                                         <div class="form-group invisible">
                                             <label for="fname">Full name</label>
                                             <input type="text" class="form-control" id="fname" name="fname" aria-describedby="fnameHelp" placeholder="Enter full name">
@@ -87,7 +87,7 @@ include "../../assets/include/conn.php";
                                             <input type="password" class="form-control" id="spassword" name="spassword" placeholder="Password" required>
                                         </div>
                                         <button type="submit" class="btn btn-primary signup-btn">Signup</button>
-                                        <span class="p-3 signin-switch">Dont have an accuount? Signup Now!</span>
+                                        <span class="p-3 signin-switch">Have an account? Login now!</span>
                                     </form>
                                 </div>
                             </div>
