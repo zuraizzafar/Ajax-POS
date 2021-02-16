@@ -19,13 +19,14 @@ $(document).ready(function () {
                 pass: password,
             },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data == 1) {
-                    swal({
-                        title: "User created!",
-                        text: "Enter credentials in login form!",
-                        icon: "success",
-                    });
+                    // swal({
+                    //     title: "User created!",
+                    //     text: "Enter credentials in login form!",
+                    //     icon: "success",
+                    // });
+                    window.location.replace("../");
                 }
                 else {
                     swal({

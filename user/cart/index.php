@@ -1,6 +1,6 @@
 <?php
 include '../../assets/include/conn.php';
-if (!isset($_SESSION['username'])) {
+if (!isset($_COOKIE['username'])) {
     header("location: ../login/");
 }
 ?>
@@ -37,7 +37,7 @@ if (!isset($_SESSION['username'])) {
                         <a class="nav-link" href="../../user/"><i class="fas fa-home mr-1"></i>Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="../cart/"><i class="fas fa-shopping-cart mr-1"></i><span class="badge badge-secondary cart-items-badge mr-1"><?php echo $_SESSION['cart_items']; ?></span>Cart</a>
+                        <a class="nav-link" href="../cart/"><i class="fas fa-shopping-cart mr-1"></i><span class="badge badge-secondary cart-items-badge mr-1"><?php echo $_COOKIE['cart_items']; ?></span>Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../transactions/"><i class="fas fa-history mr-1"></i>Transactions</a>
@@ -46,7 +46,7 @@ if (!isset($_SESSION['username'])) {
                 <span class="navbar-text">
                     <div class="btn-group">
                         <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['full_name']; ?>
+                            <i class="fas fa-user-circle mr-2"></i><?php echo $_COOKIE['full_name']; ?>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
                             <a class="dropdown-item" href="../profile/">Manage profile</a>
@@ -63,7 +63,7 @@ if (!isset($_SESSION['username'])) {
                 <div class="col-md-6 bg-light pt-3 pb-2">
                     <div class="row" style="overflow-y: auto; height: 420px;">
                         <?php
-                        $user_id = $_SESSION['user_id'];
+                        $user_id = $_COOKIE['user_id'];
                         $sql = "SELECT * from cart where `user_id` = '$user_id'";
                         $result = mysqli_query($conn, $sql);
                         $price = 0;
@@ -86,7 +86,7 @@ if (!isset($_SESSION['username'])) {
                                             <div class="row">
                                                 <div class="card-text col-5"><strong>Price: </strong>Rs. <span class="item-price" data-id="<?php echo $prod_id; ?>"><?php echo $prod_row['price']; ?></span></div>
                                                 <div class="form-group col-3">
-                                                    <input class="form-control cart-item-quan" min="1" data-id="<?php echo $prod_id ?>" type="number" id="cart-item-quantity-<?php echo $prod_id ?>" value="<?php echo $row['product_quantity']; ?>">
+                                                    <input class="form-control cart-item-quan" min="1" max="<?php $prod_row['quantity'] ?>" data-id="<?php echo $prod_id ?>" type="number" id="cart-item-quantity-<?php echo $prod_id ?>" value="<?php echo $row['product_quantity']; ?>">
                                                 </div>
                                                 <div class="col-4 text-center"><button class="btn btn-danger delete-item" data-id="<?php echo $prod_id; ?>"> <i class="fas fa-trash"></i> </button></div>
                                             </div>

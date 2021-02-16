@@ -1,6 +1,6 @@
 <?php 
     include '../../assets/include/conn.php';
-    $uid = $_SESSION['user_id'];
+    $uid = $_COOKIE['user_id'];
     $pid = $_POST['cid'];
     $quan = $_POST['quan'];
 
