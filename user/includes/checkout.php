@@ -6,4 +6,5 @@
     mysqli_query($conn, $sql);
     $sql = "DELETE from cart where `user_id`='$uid'";
     mysqli_query($conn, $sql);
+    $_SESSION['cart_items'] = 0;
 ?>

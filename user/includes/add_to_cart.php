@@ -9,6 +9,8 @@
     }
     else {
         $sql = "INSERT INTO cart(`user_id`,`product_id`,`product_quantity`) values ('$uid', '$pid', '1')";
+        $_SESSION['cart_items'] += 1;
+        echo 1;
     }
     mysqli_query($conn, $sql);
 ?>

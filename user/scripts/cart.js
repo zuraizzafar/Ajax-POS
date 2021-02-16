@@ -39,6 +39,7 @@ $(document).on("click", ".delete-item", function () {
                 data: { cid: id },
             });
             $("#cart-item-" + id).remove();
+            $(".cart-items-badge").text(parseInt($(".cart-items-badge").text())-1);
             cartPrice();
             cartItem();
             swal("Cart has been updated!", {
@@ -72,6 +73,7 @@ $(document).on("click", ".checkout", function () {
             });
             $(".cart-card").remove();
             cartPrice();
+            $(".cart-items-badge").text(0);
         }
     });
 });

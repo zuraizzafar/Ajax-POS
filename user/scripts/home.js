@@ -10,6 +10,9 @@ $(document).on("click", ".add-to-cart", function() {
                 text: "Item added to cart succesfully, goto cart to checkout!",
                 icon: "success",
             });
+            if(data==1) {
+                $(".cart-items-badge").text(parseInt($(".cart-items-badge").text())+1);
+            }
         },
     });
 });
