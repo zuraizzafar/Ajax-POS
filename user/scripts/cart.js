@@ -39,7 +39,7 @@ $(document).on("click", ".delete-item", function () {
                 data: { cid: id },
             });
             $("#cart-item-" + id).remove();
-            $(".cart-items-badge").text(parseInt($(".cart-items-badge").text())-1);
+            $(".cart-items-badge").text(parseInt($(".cart-items-badge").text()) - 1);
             cartPrice();
             cartItem();
             swal("Cart has been updated!", {
@@ -49,7 +49,7 @@ $(document).on("click", ".delete-item", function () {
     });
 });
 $(document).ready(function () {
-    $("input").change(function () {
+    $(document).on("click", ".update-quantity", function () {
         var id = $(this).data("id");
         var quantity = $("#cart-item-quantity-" + id).val();
         cartPrice();
@@ -62,21 +62,38 @@ $(document).ready(function () {
     });
 });
 $(document).on("click", ".un-checkout", function () {
-    window.location.href = "../login/";
+    var items = parseInt($(".cart-items-badge").text());
+    if (items)
+        window.location.href = "../login/";   
+    else {
+        swal({
+            title: "Cart is empty!",
+            icon: "warning",
+        });
+    }
 });
 $(document).on("click", ".checkout", function () {
     var pr = $(".cart-price").text();
-    $.ajax({
-        url: "../includes/checkout.php",
-        type: "POST",
-        data: { price: pr },
-        success: function (data) {
-            swal("Payment Successfull!", {
-                icon: "success",
-            });
-            $(".cart-card").remove();
-            cartPrice();
-            $(".cart-items-badge").text(0);
-        }
-    });
+    var items = parseInt($(".cart-items-badge").text());
+    if (items) {
+        $.ajax({
+            url: "../includes/checkout.php",
+            type: "POST",
+            data: { price: pr },
+            success: function (data) {
+                swal("Payment Successfull!", {
+                    icon: "success",
+                });
+                $(".cart-card").remove();
+                cartPrice();
+                $(".cart-items-badge").text(0);
+            }
+        });
+    }
+    else {
+        swal({
+            title: "Cart is empty!",
+            icon: "warning",
+        });
+    }
 });
