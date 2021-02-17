@@ -36,12 +36,14 @@ include "../../assets/include/conn.php";
                         <div class="conatiner p-3 p-md-5 text-center">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum modi et hic sed. Architecto provident saepe nihil, quae neque vel nisi cum ab! Quos modi, quaerat fugit iusto maxime perspiciatis!</p>
                         </div>
-                        <h5 class="text-center pl-3 pr-3 pl-md-5 pr-md-5">
-                            Join us now to avail amazing offer and discounts online!
-                        </h5>
-                        <figure class="text-center pt-2">
-                            <i class="fas fa-sign-in-alt fa-2x"></i>
-                        </figure>
+                        <a href="../" class="text-white">
+                            <h5 class="text-center pl-3 pr-3 pl-md-5 pr-md-5">
+                                Continue Shopping, join Later? Click here!
+                            </h5>
+                            <figure class="text-center pt-2">
+                                <i class="fas fa-home fa-2x"></i>
+                            </figure>
+                        </a>
                     </div>
                     <div id="login_carousel" class="carousel slide col-md-6 p-3 p-md-5 rounded-right bg-light text-dark" data-ride="carousel" data-interval="false" data-keyboard="false">
                         <div class="carousel-inner">
