@@ -24,7 +24,7 @@ if (!isset($_COOKIE['user_id'])) {
     if (mysqli_num_rows($check_result)) {
         $sql = "UPDATE cart SET product_quantity = product_quantity + $pquan where `user_id`='$uid' and `product_id`='$pid'";
     } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
+        // $ip = $_SERVER['REMOTE_ADDR'];
         $sql = "INSERT INTO cart(`user_id`,`product_id`,`product_quantity`) values ('$uid', '$pid', '$pquan')";
         setcookie('cart_items', $_COOKIE['cart_items'] + 1, time() + (86400 * 7), "/");
         echo 1;

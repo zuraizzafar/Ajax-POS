@@ -8,6 +8,7 @@ if (!isset($_COOKIE['user_id'])) {
         unset($_SESSION['products']["product"][$key]);
         unset($_SESSION['products']["quantity"][$key]);
     }
+    setcookie('cart_items', $_COOKIE['cart_items'] - 1, time() + (86400 * 7), "/");
 }
 else {
     $uid = $_COOKIE['user_id'];
