@@ -203,7 +203,7 @@ else $logged = 1;
                             <h5 class="mt-4">Sub-total:</h5>
                             <div class="text-muted text-right">Rs. <span class="cart-price"><?php echo $price; ?></span></div>
                         </div>
-                        <button class="btn btn-success w-100 rounded-0 mt-4 mb-4 checkout">Checkout</button>
+                        <button class="btn btn-success w-100 rounded-0 mt-4 mb-4 un-checkout">Checkout</button>
                         <div class="container credit-cards mb-3">
                             <h6>We Accept:</h6>
                             <div class="text-center mt-2 text-muted">

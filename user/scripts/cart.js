@@ -61,6 +61,9 @@ $(document).ready(function () {
         });
     });
 });
+$(document).on("click", ".un-checkout", function () {
+    window.location.href = "../login/";
+});
 $(document).on("click", ".checkout", function () {
     var pr = $(".cart-price").text();
     $.ajax({
