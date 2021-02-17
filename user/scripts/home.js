@@ -1,18 +1,6 @@
 $(document).on("click", ".add-to-cart", function() {
     var id = $(this).data("id");
-    $.ajax({
-        type: "POST",
-        url: "includes/add_to_cart.php",
-        data: { pid: id },
-        success: function(data) {
-            swal({
-                title: "Added to cart!",
-                text: "Item added to cart succesfully, goto cart to checkout!",
-                icon: "success",
-            });
-            if(data==1) {
-                $(".cart-items-badge").text(parseInt($(".cart-items-badge").text())+1);
-            }
-        },
-    });
+    var cat = $(this).data("cat");
+    var subcat = $(this).data("subcat");
+    window.location.href = "product/?id="+id+"&cat="+cat+"&subcat="+subcat;
 });

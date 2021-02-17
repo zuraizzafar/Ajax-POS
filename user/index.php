@@ -1,8 +1,10 @@
 <?php
 include '../assets/include/conn.php';
 if (!isset($_COOKIE['username'])) {
-    header("location: login/");
+    // header("location: login/");
+    $logged = 0;
 }
+else $logged = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +46,7 @@ if (!isset($_COOKIE['username'])) {
                     </li>
                 </ul>
                 <span class="navbar-text">
+                    <?php if ($logged) { ?>
                     <div class="btn-group">
                         <button class="btn btn-light dropdown-toggle" type="button" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-user-circle mr-2"></i><?php echo $_COOKIE['full_name']; ?>
@@ -53,6 +56,12 @@ if (!isset($_COOKIE['username'])) {
                             <a class="dropdown-item" href="../assets/include/logout.php"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
                         </div>
                     </div>
+                    <?php } ?>
+                    <?php if (!$logged) { ?>
+                        <a class="btn btn-light" href="login/">
+                            <i class="fas fa-user-circle mr-2"></i> Login or SignUp
+                        </a>
+                    <?php } ?>
                 </span>
             </div>
         </nav>
@@ -85,7 +94,7 @@ if (!isset($_COOKIE['username'])) {
                                 <div class="card-text"><strong>Category: </strong><?php echo $row['category']; ?></div>
                                 <small class="text-muted"><strong>Subcategory: </strong><?php echo $row['subcat']; ?></small> <br>
                                 <div class="text-center">
-                                    <button class="btn btn-success mt-2 pl-5 pr-5 rounded-pill add-to-cart" data-id="<?php echo $row['pid'];?>"><i class="fas fa-cart-plus"></i></button>
+                                    <button class="btn btn-success mt-2 pl-5 pr-5 rounded-pill add-to-cart" data-id="<?php echo $row['pid'];?>" data-cat="<?php echo $row['category']; ?>" data-subcat="<?php echo $row['subcat']; ?>"><i class="fas fa-cart-plus"></i></button>
                                 </div>
                             </div>
                         </div>
