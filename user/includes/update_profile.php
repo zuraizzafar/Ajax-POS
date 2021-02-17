@@ -7,7 +7,7 @@
     mysqli_query($conn, $sql);
     if (mysqli_affected_rows($conn)) {
         echo 1;
-        $_COOKIE['username'] = $newUsername;
+        // $_COOKIE['username'] = $newUsername;
         setcookie('username', $newUsername, time()+(86400 * 7),"/");
         // $_COOKIE['full_name'] = $newFullname;
         setcookie('full_name', $newFullname, time()+(86400 * 7),"/");

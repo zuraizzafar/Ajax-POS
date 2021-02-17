@@ -1,14 +1,15 @@
 <?php
     $conn = mysqli_connect('localhost', 'root', '', 'd03022021');
-    // session_start();
-    // if(!isset($_COOKIE["products"])){
-    //     $products = array(
-    //         "product"=>
-    //         array(""),
-    //         "quantity"=>
-    //         array("")
-    //     );
+    setcookie("cart_items", 0, time()+(86400 * 7),"/");
+    if(!isset($_COOKIE["username"])){
+    session_start();
+        $products = array(
+            "product"=>
+            array(""),
+            "quantity"=>
+            array("")
+        );
         // setcookie("products", $products, time()+(86400 * 7));
-        // $_SESSION["products"] = $products;
-    // }
+        $_SESSION["products"] = $products;
+    }
 ?>
