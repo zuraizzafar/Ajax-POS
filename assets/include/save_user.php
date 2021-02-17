@@ -10,10 +10,6 @@ if (mysqli_query($conn, $sql)) {
     setcookie("username", $uname, time() + (86400 * 7), "/");
     setcookie("user_id", $user_id, time() + (86400 * 7), "/");
     setcookie("full_name", $fname, time() + (86400 * 7), "/");
-    // $_SESSION['username'] = $username;
-    // $_SESSION['user_id'] = $row['user_id'];
-    // $user_id = $_COOKIE['user_id'];
-    // $_SESSION['full_name'] = $row['full_name'];
     $pids = $_SESSION["products"]["product"];
     asort($pids);
     foreach ($pids as $index => $id) {
