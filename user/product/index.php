@@ -61,7 +61,7 @@ $row = mysqli_fetch_assoc($result);
                     </div>
                     <?php } ?>
                     <?php if (!$logged) { ?>
-                        <a class="btn btn-light" href="login/">
+                        <a class="btn btn-light" href="../login/">
                             <i class="fas fa-user-circle mr-2"></i> Login or SignUp
                         </a>
                     <?php } ?>
