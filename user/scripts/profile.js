@@ -1,3 +1,13 @@
+function showAlert(selectAlert, alertText) {
+    $(selectAlert).fadeIn();
+    $(selectAlert+"-text").text(alertText);
+    setTimeout(function() {
+        $(selectAlert).fadeOut();
+    }, 3000)
+}
+$(document).on("click", "button.close", function() {
+    $(this).parent().fadeOut();
+});
 $(document).ready(function () {
     $(".change-profile").submit(function(e) {
         e.preventDefault();
@@ -7,17 +17,10 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function(data) {
                 if(data=='1') {
-                    swal({
-                        title: "Profile Updated!",
-                        icon: "success",
-                    });
+                    showAlert("#positive-alert", "Profile updated!");
                 }
                 else {
-                    swal({
-                        title: "Profile not Updated!",
-                        text: "Try using different username!",
-                        icon: "warning",
-                    });
+                    showAlert("#negative-alert", "Profile not updated! Try using different username.");
                 }
             }
         });
@@ -32,18 +35,11 @@ $(document).ready(function () {
             data: $(this).serialize(),
             success: function(data) {
                 if (data=='1') {
-                    swal({
-                        title: "Password Updated!",
-                        icon: "success",
-                    });
+                    showAlert("#positive-alert", "Password updated! operation successful.");
                     $(".change-password")[0].reset();
                 }
                 else {
-                    swal({
-                        title: "Password not Updated!",
-                        text: "Try using different credentials!",
-                        icon: "warning",
-                    });
+                    showAlert("#negative-alert", "Password not updated. Try using different credentials.");
                 }
             }
         });

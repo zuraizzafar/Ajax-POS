@@ -59,6 +59,20 @@ if (!isset($_COOKIE['username'])) {
     </header>
     <section class="site-content pt-4 mt-5">
         <div class="container mt-4">
+            <div style="position: relative;">
+                <div class="alert alert-danger alert-dismissible w-100" id="negative-alert" style="display: none; position: absolute; z-index: 5;" role="alert">
+                    <span id="negative-alert-text"></span>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="alert alert-success alert-dismissible fade show w-100" id="positive-alert" style="display: none; position: absolute; z-index: 5;" role="alert">
+                    <span id="positive-alert-text"></span>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-6">
                     <h4 class="text-center mb-3">Change Personal information</h4>
