@@ -64,7 +64,7 @@ $(document).ready(function () {
 $(document).on("click", ".un-checkout", function () {
     var items = parseInt($(".cart-items-badge").text());
     if (items)
-        window.location.href = "../login/";   
+        window.location.href = "../login/";
     else {
         swal({
             title: "Cart is empty!",
@@ -76,19 +76,28 @@ $(document).on("click", ".checkout", function () {
     var pr = $(".cart-price").text();
     var items = parseInt($(".cart-items-badge").text());
     if (items) {
-        $.ajax({
-            url: "../includes/checkout.php",
-            type: "POST",
-            data: { price: pr },
-            success: function (data) {
-                swal("Payment Successfull!", {
-                    icon: "success",
-                });
-                $(".cart-card").remove();
-                cartPrice();
-                $(".cart-items-badge").text(0);
-            }
-        });
+        swal({
+            title: "Proceed to Purchase?",
+            buttons: true,
+        })
+            .then((proceed) => {
+                if (proceed) {
+                    swal({
+                        title: "Payment Successfull!",
+                        icon: "success",
+                    });
+                    $.ajax({
+                        url: "../includes/checkout.php",
+                        type: "POST",
+                        data: { price: pr },
+                        success: function (data) {
+                            $(".cart-card").remove();
+                            cartPrice();
+                            $(".cart-items-badge").text(0);
+                        }
+                    });
+                }
+            });
     }
     else {
         swal({
