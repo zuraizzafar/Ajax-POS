@@ -67,6 +67,9 @@ else $logged = 1;
         </nav>
     </header>
     <section class="site-content pt-5 mt-5">
+        <div class="text-center">
+            <input type="text" id="search-product" name="search" placeholder="Search products..." class="form-control w-50 mr-auto ml-auto rounded-pill">
+        </div>
         <div class="container mt-3">
             <div class="row">
                 <?php
@@ -85,11 +88,11 @@ else $logged = 1;
                 $i = 1;
                 while ($row = mysqli_fetch_assoc($result)) {
                 ?>
-                    <div class="col-md-3">
+                    <div class="col-md-3 product-card" id="card-<?php echo $row['pid']; ?>">
                         <div class="card mb-4">
                             <img class="card-img-top" src="../assets/images/cardboard-box-mock-up.jfif" alt="Prodcut" draggable="false">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $row['product']; ?></h5>
+                                <h5 class="card-title" data-id="<?php echo $row['pid'];?>"><?php echo $row['product']; ?></h5>
                                 <div class="card-text"><strong>Price: </strong>Rs. <?php echo $row['price']; ?></div>
                                 <div class="card-text"><strong>Category: </strong><?php echo $row['category']; ?></div>
                                 <small class="text-muted"><strong>Subcategory: </strong><?php echo $row['subcat']; ?></small> <br>
